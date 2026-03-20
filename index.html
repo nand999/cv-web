@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<!-- Website - www.codingnepalweb.com -->
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <title>Portofolio nanda</title>
+    <title>Portfolio Ananda Dwi Ariano</title>
     <link rel="stylesheet" href="style.css" />
     <!-- Fontawesome CDN Link -->
     <link
@@ -20,6 +19,8 @@
     </style>
   </head>
   <body>
+    <!-- Global Background Canvas -->
+    <canvas id="home-canvas"></canvas>
     <!-- Move to up button -->
     <div class="scroll-button">
       <a href="#home"><i class="fas fa-arrow-up"></i></a>
@@ -29,21 +30,24 @@
       <div class="navbar">
         <div class="logo"><a href="#">Portfolio Ananda Dwi Ariano.</a></div>
         <ul class="menu">
-          <li><a href="#home">Beranda</a></li>
-          <li><a href="#about">Tentang Saya</a></li>
-          <li><a href="#skills">Keahlian</a></li>
-          <li><a href="#services">Proyek Saya</a></li>
-          <li><a href="#contact">Kontak</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#services">My Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
           <div class="cancel-btn">
             <i class="fas fa-times"></i>
           </div>
         </ul>
         <div class="media-icons">
-          <a href="https://www.facebook.com/profile.php?id=100012765873705"
-            ><i class="fab fa-facebook-f"></i
+          <a href="https://github.com/nand999"
+            ><i class="fab fa-github"></i
           ></a>
-          <a href="https://x.com/1nternetslav3?t=6X2FauKjSLf8XesK9tdbXQ&s=09"
-            ><i class="fab fa-twitter"></i
+           <a href="https://medium.com/@arianoananda"
+            ><i class="fab fa-medium"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/ananda-dwi-ariano-185373191/"
+            ><i class="fab fa-linkedin"></i
           ></a>
           <a href="https://www.instagram.com/1nternetslav3/"
             ><i class="fab fa-instagram"></i
@@ -59,41 +63,54 @@
     <section class="home" id="home">
       <div class="home-content">
         <div class="text">
-          <div class="text-one">Halo,</div>
-          <div class="text-two">Saya Ananda Dwi A.</div>
-
-          <div class="right1">
-            <img src="logo.png" alt="" />
-          </div>
-
+          <div class="text-one">Hello,</div>
+          <div class="text-two">I'm Ananda Dwi Ariano</div>
           <div class="text-three">Software Developer</div>
-          <div class="text-four">Dari Nganjuk</div>
+          <div class="text-four">From Nganjuk</div>
+          <div class="home-cta">
+            <a href="#contact"><button class="btn-primary">Contact Me</button></a>
+            <a href="#about"><button class="btn-outline">About Me</button></a>
+          </div>
         </div>
-        <!-- <div class="button">
-          <button><a href="#contact"></a> Kontak Saya</button>
-        </div> -->
+        <!-- Right Side Visual -->
+        <div class="home-visual">
+          <div class="profile-wrapper">
+            <div class="orbit orbit-1"><span class="orbit-icon"><i class="fas fa-code"></i></span></div>
+            <div class="orbit orbit-2"><span class="orbit-icon"><i class="fas fa-database"></i></span></div>
+            <div class="orbit orbit-3"><span class="orbit-icon"><i class="fab fa-android"></i></span></div>
+            <div class="profile-img-ring">
+              <img src="foto.jpg" alt="Ananda Dwi A." class="profile-img" />
+            </div>
+          </div>
+          <div class="skill-chips">
+            <span class="chip"><i class="fas fa-brain"></i> Machine Learning</span>
+            <span class="chip"><i class="fab fa-java"></i> Java</span>
+            <span class="chip"><i class="fab fa-python"></i> Python</span>
+            <span class="chip"><i class="fas fa-mobile-alt"></i> Mobile Dev</span>
+            <span class="chip"><i class="fas fa-server"></i> API Dev</span>
+            <span class="chip"><i class="fas fa-database"></i> Database</span>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- About Section Start -->
     <section class="about" id="about">
       <div class="content">
-        <div class="title"><span>Tentang Saya</span></div>
+        <div class="title"><span>About Me</span></div>
         <div class="about-details">
           <div class="left">
             <img src="foto.jpg" alt="" />
           </div>
           <div class="right">
-            <div class="topic">Disiplin, Jujur, Bertanggung jawab</div>
+            <div class="topic">Disciplined, Honest, Responsible</div>
             <p>
-              Seorang mahasiswa Teknik Informatika yang bersemangat dan
-              berdedikasi di Politeknik Negeri Jember. Memiliki pengalaman dalam
-              pengembangan aplikasi mobile Android melalui proyek yang dilakukan
-              sebagai bagian dari tugas kuliah sebelumnya. Terampil dalam
-              pemrograman dan memiliki pemahaman yang kuat tentang konsep
-              teknologi informasi. Memiliki minat khusus dalam pengembangan
-              aplikasi dan teknologi mobile. Siap untuk belajar dan
-              berkontribusi dalam lingkungan kerja yang dinamis dan kolaboratif.
+              An enthusiastic and dedicated Informatics Engineering student at
+              Politeknik Negeri Jember. Experienced in Machine Learning and Android mobile application
+              development through projects completed as part of previous coursework.
+              Skilled in programming with a solid understanding of information
+              technology concepts. Has a keen interest in Machine Learning, Mobile Application, and Database. Ready to learn and contribute in a dynamic
+              and collaborative work environment.
             </p>
             <div class="button">
               <a href="https://drive.google.com/file/d/16pSQkwzEPmKwWg3TVnpODk_J-hw-pzIH/view?usp=drive_link" target="_blank"><button>Download Resume</button></a>
@@ -107,39 +124,39 @@
     <!-- Section Tag and Other Div will same where we need to put same CSS -->
     <section class="skills" id="skills">
       <div class="content">
-        <div class="title"><span>Keahlian Saya</span></div>
+        <div class="title"><span>My Skills</span></div>
         <div class="skills-details">
           <div class="text">
-            <div class="topic">Pengembangan Aplikasi</div>
+            <div class="topic">Application Development</div>
             <p>
-              Sebagai mahasiswa DIV teknik informatika selama 2 tahun saya telah
-              mengembangkan aplikasi, baik berbasis desktop ataupun mobile,
-              dengan bahasa pemrograman yang beragam termasuk pengembangan basis
-              data di dalamnya dan mengembangkan API.
+              As a final-year Informatics Engineering student with 3.5 years of experience,
+              I have worked on various project-based applications, including machine learning models,
+              mobile applications using Flutter, and data analysis using Python.
+              I am also familiar with basic programming concepts, database systems, and API development.
             </p>
             <div class="experience">
-              <div class="num">1.5</div>
+              <div class="num">3.5</div>
               <div class="exp">
-                Tahun <br />
-                Pengalaman
+                Years <br />
+                Experience
               </div>
             </div>
           </div>
           <div class="boxes">
             <div class="box">
-              <div class="topic">Dart</div>
+              <div class="topic">Machine Learning</div>
               <div class="per">70%</div>
             </div>
             <div class="box">
-              <div class="topic">Java</div>
+              <div class="topic">Mobile Apps</div>
               <div class="per">70%</div>
             </div>
             <div class="box">
-              <div class="topic">Sql</div>
+              <div class="topic">Database</div>
               <div class="per">80%</div>
             </div>
             <div class="box">
-              <div class="topic">PHP</div>
+              <div class="topic">Documentation</div>
               <div class="per">60%</div>
             </div>
           </div>
@@ -150,7 +167,7 @@
     <!-- My Services Section Start -->
     <section class="services" id="services">
       <div class="content">
-        <div class="title"><span>Proyek Saya</span></div>
+        <div class="title"><span>My Projects</span></div>
         <div class="boxes">
           <div class="box">
             <a href="https://github.com/nand999/DiKasir" target="_blank">
@@ -159,10 +176,21 @@
             </div>
             <div class="topic">DiKasir</div>
             <p>
-              Aplikasi kasir dan pembukuan UMKM berbasis desktop dengan bahasa
-              pemrograman Java.
+              A desktop-based cashier and bookkeeping application for small
+              businesses, built with Java.
             </p>
           </a>
+          </div>
+                    <div class="box">
+            <a href="https://github.com/nand999/analisis_sentimen_mbg" target="_blank">
+              <div class="icon">
+                <i class="fas fa-brain"></i>
+              </div>
+              <div class="topic">MBG Sentiment Analysis</div>
+              <p>
+                A sentiment analysis dashboard built using Python, implementing the SVM algorithm deployed using Streamlit for interactive visualization.
+              </p>
+            </a>
           </div>
           <div class="box">
             <a href="https://github.com/nand999/SiAntik" target="_blank">
@@ -171,22 +199,52 @@
             </div>
             <div class="topic">SiAntik</div>
             <p>
-              Aplikasi pelaporan jentik-jentik yang terintegrasi mobile dan web.
+              A mosquito larva reporting application integrated across mobile and web.
             </p>
           </a>
           </div>
           <div class="box">
             <a href="https://github.com/nand999/Elades" target="_blank">
               <div class="icon">
-                <i class="fas fa-tablet-alt"></i>
+                <i class="fab fa-android"></i>
               </div>
               <div class="topic">E-Lades</div>
               <p>
-                Aplikasi permintaan surat berbasis mobile yang terintegrasi dengan
-                web.
+                A mobile-based letter request application integrated with
+                a web platform.
               </p>
             </a>
           </div>
+          <div class="box">
+            <a href="https://github.com/nand999/MushrApp" target="_blank">
+              <div class="icon">
+                <i class="fab fa-android"></i>
+              </div>
+              <div class="topic">MushrApp</div>
+              <p>
+                An IoT-based oyster mushroom monitoring application with quality classification using the Naive Bayes algorithm.
+              </p>
+            </a>
+          </div>
+          <div class="box">
+            <a href="https://github.com/nand999/HealthRisk" target="_blank">
+              <div class="icon">
+                <i class="fas fa-brain"></i>
+              </div>
+              <div class="topic">HealthRisk</div>
+              <p>
+                A web-based application designed to assist users in early prediction of common diseases based on user input data, including Diabetes, Hypertension, and Stroke.
+              </p>
+            </a>
+          </div>
+          <!-- Add more project cards below by copying the block above -->
+
+        </div>
+        <!-- See All Button -->
+        <div class="see-all-btn">
+          <a href="https://github.com/nand999" target="_blank">
+            <button><i class="fab fa-github"></i> See All on GitHub</button>
+          </a>
         </div>
       </div>
     </section>
@@ -195,14 +253,14 @@
     <!-- Contact Me section Start -->
     <section class="contact" id="contact">
       <div class="content">
-        <div class="title"><span>Kontak</span></div>
+        <div class="title"><span>Contact</span></div>
         <div class="text">
-          <div class="topic">Punya Proyek?</div>
+          <div class="topic">Have a Project?</div>
           <p>
-           Hubungi saya jika anda membutuhkan pengembang perangkat lunak, pengembang basis data, atau tester. 
+            Contact me if you need a software developer, database developer, or tester.
           </p>
           <div class="button">
-            <a href="https://wa.link/zq28gb" target="_blank"><button>Hubungi Disini!</button></a>
+            <a href="https://wa.link/zq28gb" target="_blank"><button>Contact Me!</button></a>
           </div>
           
         </div>

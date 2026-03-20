@@ -7,6 +7,9 @@
   text-decoration: none;
   scroll-behavior: smooth;
 }
+body{
+  background: #f0f4ff;
+}
 
 /* Custom Scroll Bar CSS */
 ::-webkit-scrollbar {
@@ -107,23 +110,40 @@ nav.sticky .menu-btn{
   color: #fff;
 }
 
-/* home section styling */
+/* ============ Global Canvas ============ */
+#home-canvas{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ============ Home Section ============ */
 .home{
   height: 100vh;
   width: 100%;
-  background: url("images/background.png") no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background: transparent;
   font-family: 'Ubuntu', sans-serif;
+  position: relative;
 }
 .home .home-content{
+  position: relative;
+  z-index: 1;
   width: 90%;
   height: 100%;
   margin: auto;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+/* Left: text block */
+.home .text{
+  flex: 1;
 }
 .home .text-one{
   font-size: 25px;
@@ -131,20 +151,181 @@ nav.sticky .menu-btn{
 }
 .home .text-two{
   color: #0E2431;
-  font-size: 75px;
+  font-size: 72px;
   font-weight: 600;
   margin-left: -3px;
+  line-height: 1.1;
 }
 .home .text-three{
-  font-size: 40px;
-  margin: 5px 0;
+  font-size: 38px;
+  margin: 8px 0 4px;
   color: #4070f4;
 }
 .home .text-four{
-  font-size: 23px;
-  margin: 5px 0;
+  font-size: 22px;
+  margin: 4px 0 20px;
   color: #0E2431;
 }
+/* CTA Buttons */
+.home-cta{
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+.btn-primary{
+  outline: none;
+  padding: 10px 26px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  background: #4070f4;
+  color: #fff;
+  cursor: pointer;
+  border: 2px solid #4070f4;
+  transition: all 0.35s ease;
+  font-family: 'Ubuntu', sans-serif;
+}
+.btn-primary:hover{
+  background: transparent;
+  color: #4070f4;
+}
+.btn-outline{
+  outline: none;
+  padding: 10px 26px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  background: transparent;
+  color: #4070f4;
+  cursor: pointer;
+  border: 2px solid #4070f4;
+  transition: all 0.35s ease;
+  font-family: 'Ubuntu', sans-serif;
+}
+.btn-outline:hover{
+  background: #4070f4;
+  color: #fff;
+}
+
+/* ============ Right side: profile visual ============ */
+.home-visual{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+/* Profile orbits wrapper */
+.profile-wrapper{
+  position: relative;
+  width: 260px;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Glowing profile image ring */
+.profile-img-ring{
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  border: 4px solid #4070f4;
+  box-shadow: 0 0 0 8px rgba(64,112,244,0.12), 0 0 30px rgba(64,112,244,0.25);
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  animation: ringPulse 3s ease-in-out infinite;
+}
+.profile-img-ring img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+@keyframes ringPulse{
+  0%,100%{ box-shadow: 0 0 0 8px rgba(64,112,244,0.12), 0 0 30px rgba(64,112,244,0.2); }
+  50%{ box-shadow: 0 0 0 14px rgba(64,112,244,0.18), 0 0 50px rgba(64,112,244,0.35); }
+}
+/* Orbiting rings with icons */
+.orbit{
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(64,112,244,0.35);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.orbit-1{ width: 240px; height: 240px; animation: orbitSpin 8s linear infinite; }
+.orbit-2{ width: 300px; height: 300px; animation: orbitSpin 13s linear infinite reverse; }
+.orbit-3{ width: 360px; height: 360px; animation: orbitSpin 18s linear infinite; }
+@keyframes orbitSpin{
+  from{ transform: rotate(0deg); }
+  to{ transform: rotate(360deg); }
+}
+.orbit-icon{
+  width: 34px;
+  height: 34px;
+  background: #4070f4;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  margin-top: -17px;
+  box-shadow: 0 4px 12px rgba(64,112,244,0.35);
+  /* Counter-rotate so icon stays upright */
+}
+.orbit-1 .orbit-icon{ animation: counterSpin 8s linear infinite; }
+.orbit-2 .orbit-icon{ animation: counterSpin 13s linear infinite reverse; }
+.orbit-3 .orbit-icon{ animation: counterSpin 18s linear infinite; }
+@keyframes counterSpin{
+  from{ transform: rotate(0deg); }
+  to{ transform: rotate(-360deg); }
+}
+/* Skill chips */
+.skill-chips{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  max-width: 400px;
+}
+.chip{
+  background: rgba(64,112,244,0.1);
+  color: #4070f4;
+  border: 1.5px solid rgba(64,112,244,0.3);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+  animation: chipFloat 3s ease-in-out infinite;
+  backdrop-filter: blur(4px);
+}
+.chip:nth-child(1){ animation-delay: 0s; }
+.chip:nth-child(2){ animation-delay: 0.3s; }
+.chip:nth-child(3){ animation-delay: 0.6s; }
+.chip:nth-child(4){ animation-delay: 0.9s; }
+.chip:nth-child(5){ animation-delay: 1.2s; }
+.chip:nth-child(6){ animation-delay: 1.5s; }
+@keyframes chipFloat{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-5px); }
+}
+.chip:hover{
+  background: #4070f4;
+  color: #fff;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 6px 16px rgba(64,112,244,0.3);
+}
+
 .home .button{
   margin: 14px 0;
 }
@@ -172,6 +353,7 @@ nav.sticky .menu-btn{
  I'm Selecting Directly 'Section Tag' and 'Class'  */
 section{
   padding-top: 40px;
+  background: #fff;
 }
 section .content{
   width: 80%;
@@ -309,6 +491,9 @@ section .button button:hover{
 }
 
 /* My Services CSS */
+.services{
+  background: transparent;
+}
 .services .boxes{
   display: flex;
   flex-wrap: wrap;
@@ -323,6 +508,7 @@ section .button button:hover{
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
   cursor: default;
   transition: all 0.4s ease;
+  background: #fff;
 }
 .services .boxes .box:hover{
   background: #4070f4;
@@ -351,6 +537,32 @@ section .button button:hover{
 }
 .services .boxes .box:hover .topic,
 .services .boxes .box:hover p{
+  color: #fff;
+}
+/* See All Button */
+.see-all-btn{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.see-all-btn button{
+  outline: none;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  background: transparent;
+  color: #4070f4;
+  border: 2px solid #4070f4;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  font-family: 'Ubuntu', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.see-all-btn button:hover{
+  background: #4070f4;
   color: #fff;
 }
 /* Contact Me CSS */
@@ -468,6 +680,15 @@ footer .text span a:hover{
   .navbar .menu .cancel-btn{
     display: block;
   }
+  .home .home-content{
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 80px;
+  }
+  .home-visual{
+    display: none;
+  }
   .home .text-two{
     font-size: 65px;
   }
@@ -508,4 +729,15 @@ footer .text span a:hover{
     font-size: 50px;
     color: #4070f4;
   }
+}
+
+@media (max-width: 1000px) and (min-width: 751px){
+  .home .home-content{
+    gap: 20px;
+  }
+  .orbit-3{ display: none; }
+  .profile-wrapper{ width: 200px; height: 200px; }
+  .profile-img-ring{ width: 145px; height: 145px; }
+  .orbit-1{ width: 185px; height: 185px; }
+  .orbit-2{ width: 240px; height: 240px; }
 }
